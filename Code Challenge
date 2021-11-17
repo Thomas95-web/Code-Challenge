@@ -1,28 +1,39 @@
-const findSum = function(array) { 
-  let sum = 0;
+const findSum = function(array) {
+    let sum = 0;
 
-  for (let i = 0; i < findSum.length; i++) {
-    sum += findSum[i];
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+        
+  }
     return sum
-} 
   };
-
-const findFrequency = function(array) {
-  // your code here - don't forget to return an object!
-};
-
-const isPalindrome = function(str) {
-  // your code here - don't forget to return a boolean!
-};
-
-const largestPair = function(array) {
-  // your code here - don't forget to return a number!
-};
-
-const removeParenth = function(str) {
-  // your code here - don't forget to return a string!
-};
-
-const scoreScrabble = function(str) {
-  // your code here - don't forget to return a number!
-};
+  
+  const findFrequency = function(array) {
+    // your code here - don't forget to return an object!
+  };
+  
+  const isPalindrome = function(str) {
+      let arr = Array.from(str);
+      let check = arr.reverse();
+      check = check.join('')
+      if (str === check) {
+          return true;
+      } else {
+          return false;
+        }
+        
+    // your code here - don't forget to return a boolean!
+  };
+  
+  const largestPair = function(array) {
+    // your code here - don't forget to return a number!
+  };
+  
+  const removeParenth = function(str) {
+    // your code here - don't forget to return a string!
+  };
+  
+  const scoreScrabble = function(str) {
+    // your code here - don't forget to return a number!
+  };
+  
