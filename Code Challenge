@@ -3,7 +3,6 @@ const findSum = function(array) {
 
     for (let i = 0; i < array.length; i++) {
         sum += array[i];
-        
   }
     return sum
   };
@@ -30,10 +29,14 @@ const findSum = function(array) {
   };
   
   const removeParenth = function(str) {
-    // your code here - don't forget to return a string!
+    let arr1 = Array.from(str);
+    arr1.forEach(word => {
+      if (word[word.length-1] === ')') {
+        return !arr1.includes(word)
+        }
+      })
   };
   
   const scoreScrabble = function(str) {
     // your code here - don't forget to return a number!
   };
-  
