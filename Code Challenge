@@ -29,12 +29,8 @@ const findSum = function(array) {
   };
   
   const removeParenth = function(str) {
-    let arr1 = Array.from(str);
-    arr1.forEach(word => {
-      if (word[word.length-1] === ')') {
-        return !arr1.includes(word)
-        }
-      })
+    let arr1 = str.replace(/ *\([^)]*\) */g, "")
+    return arr1
   };
   
   const scoreScrabble = function(str) {
