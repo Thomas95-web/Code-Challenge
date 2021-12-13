@@ -1,54 +1,76 @@
-const findSum = function(array) {
-    let sum = 0;
+const findSum = function (array) {
+  let sum = 0;
 
-    for (let i = 0; i < array.length; i++) {
-        sum += array[i];
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
   }
-    return sum
-  };
-  
-  const findFrequency = function(array) {
-    // your code here - don't forget to return an object!
-  };
-  
-  const isPalindrome = function(str) {
-      let arr = Array.from(str);
-      let check = arr.reverse();
-      check = check.join('')
-      if (str === check) {
-          return true;
-      } else {
-          return false;
-        }
-        
-    // your code here - don't forget to return a boolean!
-  };
-  
-  const largestPair = function(array) {
-    // your code here - don't forget to return a number!
-  };
-  
-  const removeParenth = function(str) {
-    let arr1 = str.replace(/ *\([^)]*\) */g, "")
-    return arr1
-  };
-  
-  const scoreScrabble = function(str) {
+  return sum
+};
 
-    let letter = str;
+const findFrequency = function (array) {
+  let count = array.reduce(function (allLetters, char) {
+    if (char in allLetters) {
+      allLetters[char]++
+    }
+    else {
+      allLetters[char] = 1
+    }
+    return allLetters
+  }, {})
+  return count
+};
 
-    function letterValue(word) {
-      let points = { a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10 },
-          sum = 0,
-          i;
-  
-      word = word.toLowerCase();
-      for (i = 0; i < word.length; i++) {
-          sum += points[word[i]] || 0; 
-      }
-      return sum;
+const isPalindrome = function (str) {
+  let arr = Array.from(str);
+  let check = arr.reverse();
+  check = check.join('')
+  if (str === check) {
+    return true;
+  } else {
+    return false;
   }
-  
+
+  // your code here - don't forget to return a boolean!
+};
+
+
+const largestPair = function (arr) {
+  let myResult = 0
+  let i = 0
+  let maxIndex = arr.length - 1
+  do {
+    if (arr[i] * arr[i + 1] > myResult) {
+      myResult = arr[i] * arr[i + 1]
+    } else {
+      myResult = myResult
+    }
+    i++
+  } while (i < maxIndex)
+  return myResult;
+
+};
+
+const removeParenth = function (str) {
+  let arr1 = str.replace(/ *\([^)]*\) */g, "")
+  return arr1
+};
+
+const scoreScrabble = function (str) {
+
+  let letter = str;
+
+  function letterValue(word) {
+    let points = { a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10 },
+      sum = 0,
+      i;
+
+    word = word.toLowerCase();
+    for (i = 0; i < word.length; i++) {
+      sum += points[word[i]] || 0;
+    }
+    return sum;
+  }
+
   return letterValue(letter)
-  };
-  
+};
+
